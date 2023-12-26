@@ -18,7 +18,7 @@ router.post("/signup", wrapAsync( async(req, res)=>{
             if(err){
                 return next(err);
             }
-            res.flash("success", "Welcome to Explore Hotels!");
+            req.flash("success", "Welcome to Explore Hotels!");
             res.redirect("/listings");
         })
         req.flash("success", "Welcome to Explore Hotels");
