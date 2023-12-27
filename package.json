@@ -1,4 +1,7 @@
 {
+  "engines":{
+    "node": "20.8.0"
+  },
   "name": "explore-hotels",
   "version": "1.0.0",
   "description": "",
