@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -22,7 +23,8 @@ const app = express();
 
 
 //Database Connect -----------------------------------------------------------
-const MONGO_URL = "mongodb://127.0.0.1:27017/ExploreHotels";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/ExploreHotels";
+const dbURL = process.env.ATLASDB_URL;
 
 main().then( ()=>{
     console.log("DB connected");
@@ -32,7 +34,8 @@ main().then( ()=>{
 })
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    // await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbURL);
 }
 
 //middleware-----------------------------------------------------------
@@ -44,7 +47,20 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
 //session
+const store = MongoStore.create({
+    mongoUrl: dbURL,
+    crypto:{
+        secret: "mysupersecretcode",
+    },
+    touchAfter: 24*3600,
+});
+
+store.on("error", ()=>{
+    console.log("Mongo Store session error!");
+})
+
 const sessionOptions = {
+    store,
     secret: "mysupersecretcode",
     resave: false,
     saveUninitiallized: true,
