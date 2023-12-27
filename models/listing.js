@@ -9,9 +9,8 @@ const listingSchema = new Schema({
     },
     description: String,
     image : {
-        type : String,
-        default : "https://unsplash.com/photos/white-and-blue-wooden-house-near-green-trees-during-daytime-4YPxI_c3RgM",
-        set : (v) => v === "" ? "https://unsplash.com/photos/white-and-blue-wooden-house-near-green-trees-during-daytime-4YPxI_c3RgM" : v ,
+        url: String,
+        filename: String,
     },
     price : Number,
     location : String,
