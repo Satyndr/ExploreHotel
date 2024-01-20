@@ -14,13 +14,12 @@ body{
 
 /* header */
 .navbar{
-    height: 5rem;
+    height: 4.5rem;
 }
 
-.navbar-brand{
-    color: #44A1A0 !important;
-    font-weight: 750;
-    font-size: 1.4rem !important;
+.navbar-nav>a{
+    margin-left: 1rem;
+    font-size: 1.2rem;
 }
 
 .nav-link{
@@ -31,7 +30,7 @@ body{
 /* footer */
 .f-info-links a{
     text-decoration: none;
-    color: #222;
+    color: #fff;
 }
 
 .f-info-links a :hover{
@@ -43,17 +42,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .f-info-socials i {
     font-size: 1.2rem;
     margin-right: 2rem;
+    color: white;
 }
 
 .f-info{
     display: flex;
     height: 8rem;
-    background-color: #78CDD7;
+    background-color: #221815;
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
@@ -119,15 +120,16 @@ body{
 
 /* new listing */
 .btn-color{
-    background-color: #44A1A0 !important;
-    border: none !important;
+    background-color: #fff !important;
+    color: #221815 !important;
+    border: solid #221815 !important;
 }
 
 /* show page */
 .show-img{
     object-fit: cover;
     height: 40vh ;
-    width: 60vh;
+    width: 15rem;
     border-radius: 1rem;
 }
 
