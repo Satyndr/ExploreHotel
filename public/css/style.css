@@ -85,9 +85,35 @@ body{
     text-decoration: none;
 }
 
+.filter-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filter-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    gap: 1rem;
+}
+
+.filter-bttn{
+    border: 1px solid #222 ;
+    background-color: transparent;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+    padding: 0.6rem;
+}
+
 #filters{
     display: flex;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
     overflow-x: scroll;
     scrollbar-width: none;
 }
@@ -106,6 +132,12 @@ body{
 }
 .filter p{
     font-size: 0.8rem;
+}
+
+@media (width<1000px){
+    .filter-div{
+        display: none;
+    }
 }
 
 /* card effect */
