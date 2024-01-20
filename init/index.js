@@ -3,7 +3,8 @@ const initData = require("./data.js");
 
 const Listing  = require("../models/listing.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/ExploreHotels";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/ExploreHotels";
+const MONGO_URL = "mongodb+srv://satyendrakumarcontact:RveBRlWPv8og1UYB@cluster0.imyb8tb.mongodb.net/?retryWrites=true&w=majority";
 
 main().then( ()=>{
     console.log("DB connected");
